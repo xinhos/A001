@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>云课堂登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/xinhoCSS.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/md5.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body class="scroller-default">
+<input type="hidden" id="warn-code" value="">
+    <div class="header"><a href="" class="logo">云课堂登录</a></div>
+    <main class="login-main">
+        <section class="main">
+            <form action="" id="login-form">
+                <div class="login-box">
+                    <div class="info">
+                        <h3 id="info-h3">密码登录</h3>
+                        <p id="warn-message" class="warn-message">登陆密码不正确</p>
+                    </div>
+                    <div class="input-label">
+                        <span class="fa fa-user-o user-icon"></span>
+                        <input type="text" class="username" id="username">
+                    </div>
+                    <div class="input-label">
+                        <span class="fa fa-lock lock-icon"></span>
+                        <input type="password" class="password" id="passwordTemp">
+                    </div>
+                    <button type="button" class="button" onclick="login()">登录</button>
+                    <ul class="other-login-ul">
+                        <li><a href=""><span class="other-login-icon qq-login"></span>QQ登陆</a></li>
+                        <li><a href=""><span class="other-login-icon **-login"></span>其他登陆</a></li>
+                    </ul>
+                    <div class="other"><a href="">忘记密码</a><a href="regist.html">免费注册</a></div>
+                    <!--隐藏域-->
+                    <input type="hidden" class="password" id="password">
+                </div>
+            </form>
+        </section>
+    </main>
+    <!--用户登陆失败展示信息脚本-->
+    <script>
+    var code = $("#warn-code").val();
+    if (code != undefined && code != ""){
+        var warnMessage = Messager[code];
+        $("#info-h3").css("display","none");
+        $("#warn-message").html(warnMessage).css("display","flex");
+    }
+    </script>
+    <footer>
+        <p class="footer-info">云课堂项目</p>
+        <p class="footer-info">毕业设计，制作于2017～2018</p>
+    </footer>
+
+</body>
+</html>

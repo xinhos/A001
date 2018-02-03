@@ -1,0 +1,544 @@
+.header{
+    display: flex;
+    width: 100%;
+    height: 90px;
+    background: #fff;
+    flex-direction: row;
+    align-items: center;
+}
+.header .logo{
+    display: block;
+    text-indent: -99999px;
+    background: blue;
+    width: 220px;
+    height: 52px;
+    margin-left: 80px;
+    background: url("../image/logo.png") no-repeat;
+    background-size: cover;
+}
+
+.login-main{
+    width: 100%;
+    height: 550px;
+    background: rgba(0,7,70,1);
+    margin-bottom: 10px;
+}
+/*TODO 由于没有给首页图，所以用背景渐变合成了一张，在给了首页图的情况下删除渐变，只保留url即可*/
+.main{
+    width:100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(255,255,255,0)50%,
+        rgba(0,7,70,0.8)90%,
+        rgba(0,7,70,1)100%), url("../image/main.jpg") no-repeat;
+    background-size: contain;
+    background-position: -200px 0;
+    position: relative;
+}
+
+.login-box{
+    width: 350px;
+    height:350px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 125px;
+    right:10%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+}
+.info{
+    width:100%;
+    height: 50px;
+}
+.login-box h3{
+    font-size: 16px;
+}
+.warn-message{
+    font-size: 12px;
+    color: red;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+.input-label{
+    position: relative;
+    margin-bottom: 20px;
+}
+.username,.password{
+    width:100%;
+    height: 40px;
+    text-indent: 45px;
+    font-size:14px;
+    border: 1px solid #cccccc;
+    padding:0;
+}
+.username:focus,.password:focus{
+    border: 1px solid #1ab5ff;
+}
+.user-icon,.lock-icon{
+    position: absolute;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    top: 0.5px;
+    left:1px;
+
+    background: #ccc;
+    font-size:20px;
+    text-align: center;
+    line-height: 42px;
+    color: #fff;
+}
+.button{
+    display: block;
+    background: #2db0ff;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    width: 100%;
+    height:40px;
+    font-size: 20px;
+}
+.button:hover{
+    background: #1ab5ff;
+}
+.other-login-ul{
+    font-size: 12px;
+    color: #333;
+    height: 20px;
+    margin:25px 0 5px;
+}
+.other-login-ul li{
+    display: inline-block;
+    margin-right: 25px;
+}
+.other-login-ul li:last-child{
+    margin-right: 0;
+}
+
+.other{
+    text-align: right;
+}
+.other a{
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 12px;
+    color: #333;
+}
+.other a:hover{
+    color: #514dc2;
+}
+
+body footer{
+    width:100%;
+    padding: 10px 0;
+}
+.footer-info{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+}
+
+/*//////////////////////////////////注册页面样式--step1////////////////////////////////////////////*/
+.regist-header{
+    width: 100%;
+    height: 60px;
+    margin: 20px 0;
+}
+.regist-header .regist-logo{
+    display: inline-block;
+    width: 150px;
+    height: 36px;
+    margin-top: 12px;
+    text-indent: -9990px;
+    background: url("../image/logo.png") no-repeat;
+    background-size: cover;
+}
+.regist-header .regist-h1{
+    display: inline-block;
+    font-size: 20px;
+    font-weight:400;
+    color: #555;
+}
+.step-ol{
+    display: flex;
+    border-bottom:2px solid #ccc;
+    justify-content: space-around;
+}
+.step-ol li{
+    display: inline-block;
+    margin-bottom: -2px;
+    padding-bottom: 7px;
+    color: #ccc;
+    font-weight:500;
+    font-size: 18px;
+}
+.step-ol li:last-child{
+    margin-right: 0;
+}
+.step-ol .li-active{
+    border-bottom:2px solid #1ab5ff;
+    color: #000;
+}
+.content{
+    width: 720px;
+    margin:0 auto;
+    padding:80px 0 0;
+    position: relative;
+}
+.regist-text{
+    display: inline-block;
+    text-align: right;
+    font-size: 14px;
+    width: 200px;
+    margin-right: 20px;
+}
+.phone-wrap, .check-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+}
+.select-wrap{
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+.country-select{
+    height: 100%;
+    padding-left: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 15px;
+    position: relative;
+    z-index: 10;
+    background: rgba(255,255,255,0);
+}
+.country-select:focus{
+    border:1px solid #1ab5ff;
+}
+.select-down-angle{
+    position: absolute;
+    top: 10px;
+    right:5px;
+}
+.phone-wrap .phone-number{
+    width:200px;
+    height: 100%;
+    padding-top: 4px;
+}
+
+.check-wrap{
+    margin:20px 0;
+}
+.check-track{
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    user-select:none;
+
+    font-size: 12px;
+    color: #555;
+    background: #dedede;
+}
+.check-wrap .check-thumb{
+    display: inline-block;
+    width: 45px;
+    height: 35px;
+    line-height: 35px;
+    color: #ccc;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 11;
+    left:0px;
+    font-size: 20px;
+    background: #fff;
+    cursor: move;
+}
+.check-text{
+    position: relative;
+    z-index: 10;
+}
+.check-success-box{
+    position: absolute;
+    height: 100%;
+    background: #00b400;
+    left:220px;
+}
+
+.next-step{
+    margin-left: 220px;
+}
+.next-step button, .check-button{
+    width: 170px;
+    height: 35px;
+    border:none;
+    background: #eee;
+    font-size: 17px;
+    color: #999;
+    font-weight:500;
+    border-radius: 3px;
+}
+.next-step button:hover{
+    color: #fff;
+}
+.next-step button:active{
+    border: 1px solid #1ab5ff;
+}
+
+.transition-width{
+    transition: width 0.5s;
+}
+.transition-left{
+    transition: left 0.5s;
+}
+.phone-check-box{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 350px;
+    background: #fff;
+    border:2px solid #ccc;
+    z-index: 12;
+    border-top-color:#1ab5ff;
+    padding: 20px;
+}
+.phone-check-box h4{
+    width: 100%;
+    font-size: 16px;
+}
+.phone-check-header{
+    margin-bottom: 20px;
+}
+body .phone-check-box .tip-icon{
+    color: #1ab5ff;
+    margin-right: 5px;
+}
+.phone-check-text{
+    font-size: 14px;
+    display: inline-block;
+    height: 30px;
+}
+.phone{
+    margin-bottom: 15px;
+    height: 30px;
+    line-height: 30px;
+}
+.phone-check-phone{
+    color: #000;
+}
+.check-code{
+    margin-bottom: 5px;
+}
+.check-code .cc-input{
+    width: 80px;
+    height: 30px;
+    border: 1px solid #cccccc;
+}
+.check-code button{
+    height: 30px;
+    vertical-align: -2px;
+}
+.warn-info-box{
+     margin-left: 235px;
+    margin-bottom: 25px;
+}
+.check-submit{
+    margin-left: 235px;
+}
+.check-submit .btn-default{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #1ab5ff;
+}
+.check-submit .btn-default:hover{
+    color: #ffffff;
+    background: #37beff;
+}
+.phone-check-icon{
+    margin-left: 4px;
+}
+.phone-check-info{
+    display: inline-block;
+    max-width: 150px;
+    font-size: 12px;
+    color: red;
+    margin-left: 4px;
+    vertical-align: 1px;
+}
+.close{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    padding: 5px;
+    font-size: 18px;
+    color: #555;
+}
+.close:hover{
+    cursor: pointer;
+}
+.close:active{
+    color: #000;
+    font-weight: 500;
+}
+body .alert-box.class-01{
+    width: 50%;
+    position: absolute;
+    left:25%;
+    top: 25px;
+}
+/*//////////////////////////////////注册页面样式--step2////////////////////////////////////////////*/
+.text-header{
+    display: inline-block;
+    width: 220px;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 14px;
+    color: #555;
+}
+.text-body{
+    font-size: 14px;
+    color: #555;
+}
+.login-name-text,.set-password-text, .set-username-text{
+    font-weight: 500;
+}
+.login-name{
+    margin-bottom: 40px;
+}
+.login-password input,
+.confire-password input,
+.member-name input{
+    width: 200px;
+    padding:0 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #555;
+}
+.content .result-icon{
+    display: inline-block;
+    width: 10px;
+    vertical-align: -3px;
+    margin:0 4px;
+    font-size:16px;
+}
+.content .fa-check-circle{
+    color: #00b400;
+}
+.content .fa-exclamation-circle{
+    color: red;
+}
+.content .green-0{
+    color: #00b400;
+}
+.warn-info{
+    display: inline-block;
+    font-size: 12px;
+    color: red;
+    margin-left: 4px;
+    vertical-align: -2px;
+}
+
+.step2-submit{
+    margin-left: 238px;
+    width: 150px;
+    height: 30px;
+}
+.step2-submit button{
+    width:100%;
+    height: 100%;
+    line-height: 30px;
+    background: #1ab5ff;
+    border:none;
+    border-radius: 3px;
+    color: #fff;
+}
+.set-password, .login-password, .confire-password, .set-username, .member-name{
+    margin-bottom: 20px;
+}
+
+/*/////////第三步////////////*/
+.success-box{
+    width: 100%;
+    padding: 10px 80px;
+    background: rgba(21, 188, 106, 0.09);
+}
+.content .color{
+    color: #13a7bc;
+}
+.success-info{
+    margin-bottom: 20px;
+}
+.success-box .warn-info{
+    font-size: 16px;
+    font-weight: 500;
+    vertical-align: -3px;
+}
+.detail-info{
+    margin-bottom: 10px;
+}
+.detail-info p{
+    font-size: 14px;
+    text-indent: 22px;
+    line-height: 2em;
+}
+.success-box .detail-info .phone-check-phone{
+    color: #ff5306;
+}
+
+.page-entry{
+    display: inline-block;
+    text-indent: 0;
+    margin-left: 10px;
+}
+/*发送验证码可点击后的样式*/
+.phone-check-box .class-02{
+    background: #1ab5ff;
+    color: #ffffff;
+}
+.phone-check-box .class-02:hover{
+    color: #ffffff;
+    background: #37beff;
+}
+.warn-info-box .warn-info{
+    color: #555;
+}
+
+/*////////////////////////////////////////////*/
+.set-role{
+    margin-bottom: 20px;
+}
+.set-role select{
+    vertical-align: middle;
+    padding:0 4px;
+    border-color: #555;
+    height: 30px;
+    font-size: 13px;
+    color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+/*///////////去除边距////////////////*/
+html,body,div,main,article,p,ul,ol,li,header,main,section,footer,span,
+h1,h2,h3,h4,h5,h6{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*///////input默认样式///////*/
+input{
+    box-sizing: border-box;
+    border: 1px solid #555;
+}
+input:focus{
+    outline: none;
+}
+/*///////////列表默认样式/////////////*/
+ul, ol{
+    list-style: none;
+}
+/*//////////按钮默认样式////////////*/
+button{
+    box-sizing: border-box;
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+}
+button:active{
+    outline: 1px solid #2db0ff;
+}
+/*//////////链接默认样式///////////*/
+a{
+    text-decoration: none;
+    color: #514dc2;
+}
+/*/////////滚动条样式////////////*/
+.body::-webkit-scrollbar{
+    width: 8px;
+}
+.body::-webkit-scrollbar-track{
+    background: #ffffff;
+}
+.body::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 5px;
+}
+
+/*//////////////居中样式////////////////*/
+.center-1080{
+    width: 1080px;
+    margin:0 auto;
+}
+/*/////////////select//////////////////*/
+select{
+    background: #fff;
+    height: 20px;
+    line-height: 30px;
+}
+select:focus{
+    outline:none;
+}
+select:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
