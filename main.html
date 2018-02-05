@@ -2,9 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>云课堂主页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/xinhoCSS.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <script src="js/public.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
-<body>
-
+<body class="scroller-default">
+    <header class="header">
+        <a href="" class="logo">云课堂主页</a>
+        <div class="nav">
+            <a href="">学习中心</a>
+            <a href="">商城</a>
+        </div>
+        <div class="search-wrap">
+            <input type="text" class="ipt-underline-01" id="search"
+                   onblur="$('#search-icon').removeClass('color-blue');$('#search-word').removeClass('hidden')"
+                   onfocus="$('#search-icon').addClass('color-blue');$('#search-word').addClass('hidden')">
+            <span id="search-icon" class="fa fa-search search-icon"></span>
+            <ul class="search-word" id="search-word">
+                <li>java</li>
+                <li>深度学习</li>
+                <li>数据结构</li>
+            </ul>
+        </div>
+        <div class="header-more">
+            <ul class="header-more-wrap">
+                <li id="download-app" class="download-app">下载APP</li>
+                <li id="shopping-cat" class="shopping-cat"><span class="fa fa-shopping-cart icon-shopping-cart"></span><a href="http://www.baidu.com">购物车</a></li>
+                <li id="login" class="login">
+                    <!--<img src="image/main.jpg" class="user-img" alt="">-->
+                    登陆
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="center-1152">
+        <div class="banner">
+            <img src="image/banner01.jpg" alt="">
+        </div>
+        <div class="hot-items-wrap section">
+            <h2>
+                <span class="icon-03-left"></span>
+                热<span class="icon-text-01">／</span>门<span class="icon-text-01">／</span>课<span class="icon-text-01">／</span>程
+                <span class="icon-03-right"></span>
+                <!--<a href="" class="link-goto">>>>去学习中心</a> &lt;!&ndash; TODO 填写链接 ，要是需要链接跳转，打开即可&ndash;&gt;-->
+            </h2>
+            <ul class="item-group">
+                <li class="item"><a href="">
+                    <div class="itm-img-wrap">
+                        <img src="image/course-temp01.jpg" alt="">
+                    </div>
+                    <div class="item-txt-box">
+                        <h3 class="item-title">五年模拟三年高考名师在线解读精品课程</h3>
+                        <div class="course-info">
+                            <span>高中</span>
+                            <span>高三</span>
+                            <span>
+                                <i class="fa fa-user"></i>
+                                2001
+                            </span>
+                            <span class="course-star">
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                            </span>
+                        </div>
+                        <div class="price">￥245.3</div>
+                    </div>
+                </a></li>
+                <li class="item"><a href="">
+                    <div class="itm-img-wrap">
+                        <img src="image/course-temp01.jpg" alt="">
+                    </div>
+                    <div class="item-txt-box">
+                        <h3 class="item-title">五年模拟三年高考名师在线解读精品课程</h3>
+                        <div class="course-info">
+                            <span>高中</span>
+                            <span>高三</span>
+                            <span>
+                                <i class="fa fa-user"></i>
+                                2001
+                            </span>
+                            <span class="course-star">
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                            </span>
+                        </div>
+                        <div class="price">￥245.3</div>
+                    </div>
+                </a></li>
+                <li class="item"><a href="">
+                    <div class="itm-img-wrap">
+                        <img src="image/course-temp01.jpg" alt="">
+                    </div>
+                    <div class="item-txt-box">
+                        <h3 class="item-title">五年模拟三年高考名师在线解读精品课程</h3>
+                        <div class="course-info">
+                            <span>高中</span>
+                            <span>高三</span>
+                            <span>
+                                <i class="fa fa-user"></i>
+                                2001
+                            </span>
+                            <span class="course-star">
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                            </span>
+                        </div>
+                        <div class="price">￥245.3</div>
+                    </div>
+                </a></li>
+                <li class="item"><a href="">
+                    <div class="itm-img-wrap">
+                        <img src="image/course-temp01.jpg" alt="">
+                    </div>
+                    <div class="item-txt-box">
+                        <h3 class="item-title">五年模拟三年高考名师在线解读精品课程</h3>
+                        <div class="course-info">
+                            <span>高中</span>
+                            <span>高三</span>
+                            <span>
+                                <i class="fa fa-user"></i>
+                                2001
+                            </span>
+                            <span class="course-star">
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                            </span>
+                        </div>
+                        <div class="price">￥245.3</div>
+                    </div>
+                </a></li>
+                <li class="item"><a href="">
+                    <div class="itm-img-wrap">
+                        <img src="image/course-temp01.jpg" alt="">
+                    </div>
+                    <div class="item-txt-box">
+                        <h3 class="item-title">五年模拟三年高考名师在线解读精品课程</h3>
+                        <div class="course-info">
+                            <span>高中</span>
+                            <span>高三</span>
+                            <span>
+                                <i class="fa fa-user"></i>
+                                2001
+                            </span>
+                            <span class="course-star">
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                                <i class="fa fa-star on"></i>
+                            </span>
+                        </div>
+                        <div class="price">￥245.3</div>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+    </main>
+    <footer class="footer"></footer>
 </body>
 </html>

@@ -28,6 +28,15 @@
     outline: none;
     border: 1px solid #1ab5ff;
 }
+
+.ipt-underline-01{
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+.ipt-underline-01:focus{
+    outline: none;
+    border-bottom: 1px solid #07111b;
+}
 /*///////////颜色/////////////*/
 .green-0{
     color: #00b400;
@@ -78,7 +87,13 @@
 .hidden{
     display: none;
 }
-
-
+/*///////////////////链接样式///////////////////*/
+a {
+    color: #4D555D;
+    font-size: 14px;
+}
+a:hover{
+    color: #07111b;
+}
 
 
