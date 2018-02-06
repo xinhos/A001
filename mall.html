@@ -50,7 +50,11 @@
             <li><a href="">课外读物</a></li>
         </ul>
         <div class="banner center-1152 class-02">
-            <img src="image/banner01.jpg" alt="">
+            <div class="banner-stage">
+                <a href=""><img src="image/banner01.jpg" alt=""></a>
+                <a href=""><img src="image/banner02.jpg" alt=""></a>
+                <a href=""><img src="image/banner03.jpg" alt=""></a>
+            </div>
         </div>
         <div class="section-wrap wrap-01">
             <div class="hot-intro-wrap center-1152">
@@ -279,43 +283,56 @@
                 </li>
             </ul>
             <div class="right window">
-                <ul class="r-item-list" id="r-item-list">
-                    <li class="r-item">
+                <ul class="r-item-list anima-window" id="r-item-list">
+                    <li id="r-left" class="r-item r-left">
+                        <img class="class-07" src="image/temp-good01.png" alt="">
+                        <div class="info">
+                            <p class="info-p1">￥ <span>225</span></p>
+                            <p class="info-p2">超值笔记本</p>
+                        </div>
+                    </li>
+                    <li id="window-active" class="r-item window-active">
                         <img class="class-07" src="image/temp-good02.png" alt="">
                         <div class="info">
                             <p class="info-p1">￥ <span>225</span></p>
                             <p class="info-p2">超值笔记本</p>
                         </div>
                     </li>
-                    <li class="r-item window-active">
-                        <img class="class-07" src="image/temp-good02.png" alt="">
+                    <li id="r-right" class="r-item r-right">
+                        <img class="class-07" src="image/temp-good03.png" alt="">
                         <div class="info">
                             <p class="info-p1">￥ <span>225</span></p>
                             <p class="info-p2">超值笔记本</p>
                         </div>
                     </li>
-                    <li class="r-item">
-                        <img class="class-07" src="image/temp-good02.png" alt="">
-                        <div class="info">
-                            <p class="info-p1">￥ <span>225</span></p>
-                            <p class="info-p2">超值笔记本</p>
-                        </div>
-                    </li>
-                    <li class="r-item">
-                        <img class="class-07" src="image/temp-good02.png" alt="">
-                        <div class="info">
-                            <p class="info-p1">￥ <span>225</span></p>
-                            <p class="info-p2">超值笔记本</p>
-                        </div>
-                    </li>
-                    <li class="r-item">
-                        <img class="class-07" src="image/temp-good02.png" alt="">
+                    <li id="r-bak" class="r-item r-bak">
+                        <img class="class-07" src="image/temp-good03.png" alt="">
                         <div class="info">
                             <p class="info-p1">￥ <span>225</span></p>
                             <p class="info-p2">超值笔记本</p>
                         </div>
                     </li>
                 </ul>
+                <!--
+                    1. 这里的变换用一个循环队列（数组，二维，一维用来标记先后：-1表示left-li，0表示active-li，1表示right-li，2表示缓冲li，3表示正在排队的）做
+                    2. li的个数是固定的，将数据保存在数组中，用一个定时器，每2s执行一次anima函数
+                    3. anima 函数：
+                        3.1 更新数组。将 -1 数据从数组中移除，添加到队列队尾并改标记为3，将0数据前移一个位置并改标记为-1，将1数据前移一个位置并改标记为0，取出队首2个数据到数组中并分别标记为1,2
+                        3.2 操纵li。r-left动画：改类名为r-bak，active动画：改类名为r-left，r-right动画：改类名为window-active，r-bak动画：改类名为r-right
+                        3.3 更新r-bak中的数据
+                    4. 用这种方法，至少要有4个，不用反向播放（循环队列）
+                -->
+
+
+                <script>
+
+
+                </script>
+
+
+
+
+
             </div>
         </div>
     </main>

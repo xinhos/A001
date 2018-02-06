@@ -327,8 +327,9 @@ main{
     transition: all 0.3s;
 }
 .organi-list li a img:hover{
-    width: 156px;
-    height: 148px;
+    /*width: 156px;*/
+    transform: scale(1.2,1.2);
+    /*height: 148px;*/
     transition: all 0.3s;
 }
 .organi-list li:last-child{
@@ -370,6 +371,7 @@ main{
 
 .organization-list{
     padding-bottom: 20px;
+    background: rgba(7, 64, 18, 0.02);
 }
 
 

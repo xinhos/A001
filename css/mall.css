@@ -148,7 +148,6 @@ class-02 img{
 }
 /* 这里是根据内容多少来确定的，暂时固定为5个 */
 .r-item-list{
-    width:1500px; /* 一个宽300 */
     height:50%;
     display: flex;
     margin-top: 90px;
@@ -159,8 +158,8 @@ class-02 img{
     position: relative;
     width: 300px;
     height:100%;
-    background: red;
-    transition: all 0.3s;
+    transition: all 0.5s;
+
 }
 .class-07{
     display: block;
@@ -202,6 +201,10 @@ class-02 img{
     position: relative;
     z-index: 2;
     transform: scale(2,1.7);
+    box-sizing: content-box;
+    border-top:0.1px solid red;
+    border-bottom:0.2px solid red;
+    transition: all 0.5s;
 }
 .window-active p{
     transform: scale(0.5, 0.59);
@@ -211,7 +214,14 @@ class-02 img{
     top:-10px;
     font-size: 14px;
 }
+.r-left{
 
+}
+.r-bak{
+    position: absolute;
+    z-index: 0;
+    left:230px;
+}
 
 
 
