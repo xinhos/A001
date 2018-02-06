@@ -1,0 +1,295 @@
+.header{
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    height: 70px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(7,17,27,0.1);
+    align-items: center;
+}
+@media all and (max-width:1330px){
+    .header{
+        width: 100%;
+    }
+}
+.logo{
+    display: inline-block;
+    width: 208px;
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 50px;
+    text-indent: -9999px;
+    background: url("../image/logo.png") no-repeat;
+    background-size: contain;
+}
+.nav{
+
+}
+.nav a{
+    display: inline-block;
+    color: #4D555D;
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+    margin-right: 40px;
+}
+.nav a:hover{
+    color: #07111b;
+}
+.nav a:last-child{
+    margin-right: 0;
+}
+.nav{
+    margin-right: 60px;
+}
+/*/////顶部搜索框////*/
+.search-wrap{
+    position: relative;
+}
+#search:focus .search-icon{
+    color: #1ab5ff;
+}
+.search-wrap input{
+    height: 50px;
+    width: 450px;
+    padding-right: 25px;
+    color: #555;
+    font-size: 12px;
+}
+.search-icon{
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: -1px;
+}
+.color-blue{
+    color: #1ab5ff;
+}
+@media all and (max-width:1330px){
+    .search-wrap input{
+        width: 330px;
+    }
+}
+.search-wrap input:focus{
+    border-color: #1ab5ff;
+}
+.search-word{
+    position: absolute;
+    display: flex;
+    bottom:15px;
+    right: 20px;
+    font-size: 12px;
+}
+.search-word li{
+    padding: 4px 8px;
+    border-radius: 10px;
+    background: #eee;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.header-more{
+    display: inline-flex;
+    height: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.header-more-wrap{
+    align-self: flex-end; /*/// 使模块停留在最右边//////*/
+    width: 400px;
+    height:100%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-app{
+    font-size: 14px;
+    color: #555555;
+    margin-right: 25px;
+}
+.download-app:hover{
+    color: #1ab5ff;
+    cursor: pointer;
+}
+.shopping-cat{
+    position: relative;
+    color: #555;
+    margin-right: 25px;
+}
+.shopping-cat:hover a{
+    color: #1ab5ff;
+}
+.shopping-cat:hover .icon-shopping-cart{
+    color: #1ab5ff;
+}
+.shopping-cat:hover a:active{
+    color: #1ab5ff;
+}
+.shopping-cat a{
+    display: inline-block;
+    padding: 6px 15px 6px 35px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color: inherit;
+    position: relative;
+}
+.icon-shopping-cart{
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+    color: inherit;
+    top: 9px;
+    left: 15px;
+}
+.login{
+    display: inline-block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: -4px;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+}
+.login:hover{
+    color: #1ab5ff;
+}
+.user-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+}
+main{
+    margin-top: 30px;
+}
+.banner{
+    height: 400px;
+    position: relative;
+    box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+
+.footer{
+    width:100%;
+    height: 130px;
+    background: #fff;
+    border-top: 1px dashed #cccccc;
+}
+.class-03{
+    width: 500px;
+    margin:0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #555;
+}
+
+
+
+
+
+
+.good-price{
+    display: inline-flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-good{
+    font-size: 16px;
+    font-weight: 500;
+    color: #F01414;
+    margin-top: 0;
+}
+.good-title{
+
+}
+.good-title a{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* webkit的私有属性，表示显示文本的行数*/
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis; /* 当文本溢出时显示省略符号来代表被修剪的文本。默认值为clip表示修建文本 */
+    width: 100%;
+    max-height: 46px;
+    font-weight: 400;
+    font-size: 12px;
+}
+.post{
+    display: inline-block;
+    padding: 0px 4px;
+    font-size: 12px;
+    height: 1.3em;
+    line-height: 1.3em;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 3px;
+    background: #13a7bc;
+    margin-top: 3px;
+}
+.good-info{
+    display: inline-flex;
+    width:100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:8px;
+
+}
+.good-info .fa-shopping-cart{
+    color: orangered;
+    position: relative;
+}
+.buy-num{
+    font-size: 12px;
+    color: #555;
+}
+
+.good-info button{
+    background: orangered;
+    color: #fff;
+}
+.good-info button:hover{
+    color: #fff;
+}
+.tips{
+    display: none;
+}
+.good-info .fa-shopping-cart:hover .tips{
+    display: inline-block;
+    position: absolute;
+    font-size: 12px;
+    width: 70px;
+    color: #555;
+    top: -20px;
+    left:15px;
+    text-align: center;
+    padding: 3px 0 2px;
+    background: #ffffff;
+    border:1px solid #eeeeee;
+    box-shadow: 0 0 3px 0 #ccc;
+    border-radius: 3px;
+}
+.good-info .fa-shopping-cart:active{
+    color: #13a7bc;
+}
+.good-info .fa-shopping-cart:active .tips{
+    display: none;
+}
+.search-word.hidden{
+    display: none !important;
+}

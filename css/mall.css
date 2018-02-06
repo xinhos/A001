@@ -1,0 +1,260 @@
+.types{
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.33);
+    height: 50px;
+    overflow: hidden;
+}
+.types li{
+    display: inline-block;
+}
+.types li:hover,
+li.types-active{
+    background: rgba(0, 0, 0, 0.5);
+}
+.types li a{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding:0 20px;
+    color: #ddd;
+}
+.types li:hover a,
+li.types-active a{
+    color: #fff;
+}
+class-02 img{
+    display: inline-block;
+}
+.hot-intro-wrap{
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    border-bottom:1px solid #ccc;
+}
+.hot-intro{
+    width: 150px;
+    height: 25px;
+    text-indent: -9999px;
+    background: red;
+    margin: 0 auto;
+    margin-top: 50px !important;
+    background: url("../image/title-hot.png") no-repeat;
+    background-size: cover;
+}
+.item-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.good-box{
+    width: 22%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+    border:1px solid #eee;
+}
+.good-box:hover{
+    box-shadow: 0 4px 12px 0px rgba(204, 204, 204, 0.82);
+}
+/* 图片放大动画 */
+.itm-img-wrap{
+    width: 253px;
+    height: 263px;
+    text-align: center;
+    line-height: 263px;
+    overflow: hidden;
+}
+.itm-img-wrap img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s;
+}
+.itm-img-wrap img:hover{
+    transform: scale(1.2,1.2);
+}
+
+.item-txt-box{
+    padding: 12px 8px;
+}
+
+.hidden-item-help{
+    position: relative;
+    right: -1000px;
+}
+
+.section-wrap{
+    padding-bottom: 40px;
+    box-shadow: 0 4px 12px 0px rgba(204, 204, 204, 0.69);
+    margin-bottom: 50px;
+}
+/*  最近浏览样式  */
+.last-intro{
+    display: flex;
+    justify-content: space-between;
+    height: 350px;
+    margin-bottom: 30px;
+}
+.left{
+    min-width: 253px;
+    height: 100%;
+    margin-right: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.right{
+    flex-grow: 1;
+}
+.left li:first-child{
+    border: none;
+    position: relative;
+    top:-5px;
+}
+.left li{
+    width:100%;
+    height: 65px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+.left .class-04{
+    height:25px;
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+}
+.left-li a{
+    align-items: center;
+    display: flex;
+    width:100%;
+    height: 100%;
+}
+.good-img{
+    max-width: 55px;
+    min-width: 55px;
+    height: 55px;
+}
+.good-img img{
+    width:100%;
+    height:55px;
+}
+.class-05{
+    padding-left: 30px;
+}
+.title{
+    font-size: 11px;
+    color: #555;
+    max-height: 50px;
+    line-height: 1.5em;
+}
+.left-li-price{
+    display: block;
+    padding-top: 5px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 10px;
+}
+.left-post{
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+}
+
+
+.window{
+    overflow: hidden;
+    transition: left, right 0.3s;
+}
+/* 这里是根据内容多少来确定的，暂时固定为5个 */
+.r-item-list{
+    width:1500px; /* 一个宽300 */
+    height:50%;
+    display: flex;
+    margin-top: 90px;
+    position: relative;
+    cursor: pointer;
+}
+.r-item{
+    position: relative;
+    width: 300px;
+    height:100%;
+    background: red;
+    transition: all 0.3s;
+}
+.class-07{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.info{
+    position: absolute;
+    top:50px;
+    left:75px;
+    width: 50%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.38);
+    color: #fff;
+    font-size: 12px;
+    padding:5px 0;
+    border-radius: 30px;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+.info p{
+    line-height: 1.5em;
+}
+.info-p1{
+    padding-top: 10px;
+    font-size: 18px;
+    color: orangered;
+    text-align: center;
+    padding-right: 20px;
+}
+.info-p2{
+    padding-right: 20px;
+    text-align: center;
+    font-size: 10px;
+    color: #ccc;
+    padding-bottom: 10px;
+}
+.window-active{
+    position: relative;
+    z-index: 2;
+    transform: scale(2,1.7);
+}
+.window-active p{
+    transform: scale(0.5, 0.59);
+}
+.window-active .info-p2{
+    position: relative;
+    top:-10px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
