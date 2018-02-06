@@ -1,29 +1,4 @@
-.types{
-    display: flex;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.33);
-    height: 50px;
-    overflow: hidden;
-}
-.types li{
-    display: inline-block;
-}
-.types li:hover,
-li.types-active{
-    background: rgba(0, 0, 0, 0.5);
-}
-.types li a{
-    display: inline-block;
-    height: 50px;
-    line-height: 50px;
-    padding:0 20px;
-    color: #ddd;
-}
-.types li:hover a,
-li.types-active a{
-    color: #fff;
-}
+
 class-02 img{
     display: inline-block;
 }
