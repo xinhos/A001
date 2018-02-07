@@ -144,15 +144,21 @@ class-02 img{
 
 .window{
     overflow: hidden;
-    transition: left, right 0.3s;
+    transition: left, right 0.5s;
 }
-/* 这里是根据内容多少来确定的，暂时固定为5个 */
 .r-item-list{
+    position: relative;
+    transition: left, right 0.5s;
     height:50%;
+    width: 100%;
     display: flex;
     margin-top: 90px;
-    position: relative;
     cursor: pointer;
+}
+.r-item-list li a{
+    display: block;
+    width:100%;
+    height:100%;
 }
 .r-item{
     position: relative;
@@ -169,7 +175,7 @@ class-02 img{
 .info{
     position: absolute;
     top:50px;
-    left:75px;
+    left:65px;
     width: 50%;
     height: 50px;
     background: rgba(0, 0, 0, 0.38);
@@ -182,6 +188,7 @@ class-02 img{
 }
 .info p{
     line-height: 1.5em;
+    display: none;
 }
 .info-p1{
     padding-top: 10px;
@@ -189,16 +196,28 @@ class-02 img{
     color: orangered;
     text-align: center;
     padding-right: 20px;
+    transition: all 0.3s;
 }
 .info-p2{
+    transition: all 0.1s;
     padding-right: 20px;
     text-align: center;
     font-size: 10px;
     color: #ccc;
     padding-bottom: 10px;
+    color: rgba(204, 204, 204, 0);
+}
+
+
+
+.r-left{
+    position: absolute;
+    z-index: 0;
+    left:0;
 }
 .window-active{
-    position: relative;
+    position: absolute;
+    left: 207px;
     z-index: 2;
     transform: scale(2,1.7);
     box-sizing: content-box;
@@ -206,16 +225,10 @@ class-02 img{
     border-bottom:0.2px solid red;
     transition: all 0.5s;
 }
-.window-active p{
-    transform: scale(0.5, 0.59);
-}
-.window-active .info-p2{
-    position: relative;
-    top:-10px;
-    font-size: 14px;
-}
-.r-left{
-
+.r-right{
+    position: absolute;
+    z-index: 1;
+    left: 414px;
 }
 .r-bak{
     position: absolute;
@@ -223,6 +236,25 @@ class-02 img{
     left:230px;
 }
 
+
+
+.window-active p{
+    transform: scale(0.5, 0.59);
+    font-size: 16px;
+    display: block;
+}
+.window-active .info-p2{
+    position: relative;
+    top:-15px;
+    left: 2px;
+    color: #ddd;
+}
+.window-active .info:hover{
+    background: rgba(0, 0, 0, 0.53);
+}
+.window-active .info-p2:hover{
+    color: #ffffff;
+}
 
 
 

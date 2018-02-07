@@ -353,3 +353,83 @@ li.types-active{
 li.types-active a{
     color: #fff;
 }
+
+
+
+
+
+
+.page-ul{
+    margin-top: 20px;
+}
+.page-li{
+    display: inline-block;
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border:1px solid #eee;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+}
+.page-li:hover{
+    box-shadow: 0 0 8px 0 rgba(204, 204, 204, 0.44);
+}
+.page-li:active{
+    box-shadow: 0 0 12px 1px rgba(204, 204, 204, 0.65);
+}
+.page-li-search{
+    display: inline-block;
+    vertical-align: 1px;
+}
+.page-li-search input{
+    width:45px;
+    text-align: center;
+    border-color: #ccc;
+    height:35px;
+    color: #555;
+    border-radius: 5px;
+}
+.page-li-search input::-webkit-outer-spin-button,
+.page-li-search input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+.page-li-search button{
+    margin-left: 5px;
+    vertical-align: -2px;
+    border: none;
+    background: none;
+}
+.page-li-search button:active{
+    border: none;
+    transform: scale(1.2,1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

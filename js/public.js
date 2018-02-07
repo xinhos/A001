@@ -93,7 +93,12 @@ Messager.ms100099 = "删除分类失败";
 Messager.ms110091 = "编辑分类失败";
 Messager.ms110092 = "编辑分类失败";
 
-
+// 定义轮播对象
+function carsourObj(title, imgUrl, prirce) {
+    this.title = title;
+    this.imgUrl = imgUrl;
+    this.price = prirce;
+}
 
 
 

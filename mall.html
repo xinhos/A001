@@ -292,11 +292,13 @@
                         </div>
                     </li>
                     <li id="window-active" class="r-item window-active">
-                        <img class="class-07" src="image/temp-good02.png" alt="">
-                        <div class="info">
-                            <p class="info-p1">￥ <span>225</span></p>
-                            <p class="info-p2">超值笔记本</p>
-                        </div>
+                        <a href="">
+                            <img class="class-07" src="image/temp-good02.png" alt="">
+                            <div class="info">
+                                <p class="info-p1">￥ <span>225</span></p>
+                                <p class="info-p2">超值笔记本</p>
+                            </div>
+                        </a>
                     </li>
                     <li id="r-right" class="r-item r-right">
                         <img class="class-07" src="image/temp-good03.png" alt="">
@@ -313,6 +315,31 @@
                         </div>
                     </li>
                 </ul>
+                <div class="hidden" style="overflow: hidden">
+                    <ul id="win-ul">
+                        <!--数据循环写入li-->
+                        <li>
+                            <input type="hidden" name="price" value="225">
+                            <input type="hidden" name="title" value="超值笔记本">
+                            <input type="hidden" name="img-url" value="image/temp-good01.png">
+                        </li>
+                        <li>
+                            <input type="hidden" name="price" value="225">
+                            <input type="hidden" name="title" value="超值笔记本">
+                            <input type="hidden" name="img-url" value="image/temp-good02.png">
+                        </li>
+                        <li>
+                            <input type="hidden" name="price" value="225">
+                            <input type="hidden" name="title" value="超值笔记本">
+                            <input type="hidden" name="img-url" value="image/temp-good03.png">
+                        </li>
+                        <li>
+                            <input type="hidden" name="price" value="225">
+                            <input type="hidden" name="title" value="超值笔记本">
+                            <input type="hidden" name="img-url" value="image/temp-good04.png">
+                        </li>
+                    </ul>
+                </div>
                 <!--
                     1. 这里的变换用一个循环队列（数组，二维，一维用来标记先后：-1表示left-li，0表示active-li，1表示right-li，2表示缓冲li，3表示正在排队的）做
                     2. li的个数是固定的，将数据保存在数组中，用一个定时器，每2s执行一次anima函数
@@ -322,17 +349,73 @@
                         3.3 更新r-bak中的数据
                     4. 用这种方法，至少要有4个，不用反向播放（循环队列）
                 -->
-
-
                 <script>
+                    var queue = []; // 新建队列
+                    // 获取数据
+                    var lis = $("#win-ul li");
+                    var rLeft = $("#r-left");
+                    var windowActive = $("#window-active");
+                    var rRight = $("#r-right");
+                    var rBak = $("#r-bak");
 
 
+                    lis.each(function (t) {
+                        queue.push(
+                            new carsourObj(
+                                $(this).children("input[name='title']").val(),
+                                $(this).children("input[name='img-url']").val(),
+                                $(this).children("input[name='price']").val()
+                            )
+                        )
+                    });
+                    // 构件数组并填充第一次数据
+                    var array = [];
+                    array[0] = queue.shift(); // 左边的数据
+                    array[1] = queue.shift(); // active的数据
+                    array[2] = queue.shift(); // 右边的数据
+                    array[3] = queue.shift(); // 缓冲数据
+                    // 将第一次数据写入4个li
+                    rLeft.children("img").attr("src", array[0].imgUrl);
+                    rLeft.find("span").html(array[0].price);
+                    rLeft.find(".info-p2").html(array[0].title);
+                    windowActive.children("img").attr("src", array[1].imgUrl);
+                    windowActive.find("span").html(array[1].price);
+                    windowActive.find(".info-p2").html(array[1].title);
+                    rRight.children("img").attr("src", array[2].imgUrl);
+                    rRight.find("span").html(array[2].price);
+                    rRight.find(".info-p2").html(array[2].title);
+                    rBak.children("img").attr("src", array[3].imgUrl);
+                    rBak.find("span").html(array[3].price);
+                    rBak.find(".info-p2").html(array[3].title);
+                    // 开始写定时器
+                    setInterval(function () {
+                        // 3.1 更新数组
+                        queue.push(array[0]); // 将r-left对象入队
+                        array[0] = array[1];
+                        array[1] = array[2];
+                        array[2] = array[3];
+                        array[3] = queue.shift(); // 将队首对象出队
+                        // 3.2 操纵li
+                        $("#r-item-list .r-bak").addClass("flag");
+                        var bak = $("#r-item-list .r-left").removeClass("r-left").addClass("r-bak");
+                        var left = $("#r-item-list .window-active").removeClass("window-active").addClass("r-left");
+                        var window = $("#r-item-list .r-right").removeClass("r-right").addClass("window-active");
+                        var right = $("#r-item-list .flag").removeClass("r-bak flag").addClass("r-right");
+                        // 3.3 更新r-bak数据
+//                        left.children("img").attr("src", array[0].imgUrl);
+//                        left.find("span").html(array[0].price);
+//                        left.find(".info-p2").html(array[0].title);
+//                        window.children("img").attr("src", array[1].imgUrl);
+//                        window.find("span").html(array[1].price);
+//                        window.find(".info-p2").html(array[1].title);
+//                        right.children("img").attr("src", array[2].imgUrl);
+//                        right.find("span").html(array[2].price);
+//                        right.find(".info-p2").html(array[2].title);
+                        bak.children("img").attr("src", array[3].imgUrl);
+                        bak.find("span").html(array[3].price);
+                        bak.find(".info-p2").html(array[3].title);
+                    },2500)
                 </script>
-
-
-
-
-
             </div>
         </div>
     </main>
