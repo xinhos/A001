@@ -175,10 +175,10 @@ class-02 img{
 .info{
     position: absolute;
     top:50px;
-    left:65px;
+    left:75px;
     width: 50%;
     height: 50px;
-    background: rgba(0, 0, 0, 0.38);
+    background: rgba(0, 0, 0, 0.45);
     color: #fff;
     font-size: 12px;
     padding:5px 0;
@@ -250,7 +250,7 @@ class-02 img{
     color: #ddd;
 }
 .window-active .info:hover{
-    background: rgba(0, 0, 0, 0.53);
+    background: rgba(0, 0, 0, 0.63);
 }
 .window-active .info-p2:hover{
     color: #ffffff;

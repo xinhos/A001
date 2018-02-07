@@ -1,0 +1,379 @@
+/*/////////////sLogin页面//////////////////*/
+.sLogin-html{
+    width:100%;
+    height: 100%;
+    background: url("../image/slogin.jpg") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.sLogin-body{
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.37);
+    padding-top:150px;
+}
+.slogin-main{
+    width: 350px;
+    height:300px;
+    background: rgba(255, 255, 255, 0.65);
+    margin:0 auto;
+    box-sizing: border-box;
+    padding: 30px 20px;
+}
+.info{
+    width:100%;
+    height: 50px;
+}
+.login-box h3{
+    font-size: 16px;
+}
+.warn-message{
+    font-size: 12px;
+    color: red;
+    width: 100%;
+    height: 25px;
+    display: none;
+    align-items: center;
+}
+.input-label{
+    position: relative;
+    margin-bottom: 20px;
+}
+.username,.password{
+    width:100%;
+    height: 40px;
+    text-indent: 45px;
+    font-size:14px;
+    border: 1px solid #cccccc;
+    padding:0;
+}
+.username:focus,.password:focus{
+    border: 1px solid #1ab5ff;
+}
+.user-icon,.lock-icon{
+    position: absolute;
+    display: inline-block;
+    width: 38px;
+    height: 39px;
+    top:0.5px;
+    left:1px;
+
+    background: #ccc;
+    font-size:20px !important;
+    text-align: center;
+    line-height: 39px !important;
+    color: #fff;
+}
+.button{
+    display: block;
+    background: #2db0ff;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    width: 100%;
+    height:40px;
+    font-size: 20px;
+}
+.button:hover{
+    background: #1ab5ff;
+}
+.back-blue{
+    background: #1ab5ff;
+}
+/*////////////////// 后台--用户管理 /////////////////////*/
+
+html, body, .wrap{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+.left{
+    width: 180px;
+    height: 100%;
+    background: #2f323a;
+    float: left;
+}
+.logo{
+    height: 65px;
+    padding:13px 10px 0;
+    background: rgba(71, 96, 224, 0.62);
+}
+.logo a{
+    display: block;
+    width:100%;
+    height: 100%;
+    background: url("../image/logo.png") no-repeat;
+    background-size: contain;
+}
+.tree{
+
+}
+.directory-li{
+    height:50px;
+    border-bottom:1px solid #242529
+}
+.d-icon{
+    color: #ccc;
+    padding-left:25px;
+    padding-right: 15px;
+}
+.d-link{
+    display: inline-block;
+    width:100%;
+    height:100%;
+    line-height: 50px;
+    font-size: 12px;
+    color: #a8adaf;
+}
+.directory-li:hover,.tree-active{
+    background: #1f282c;
+}
+.directory-li:hover .d-link.d-link,
+.directory-li:hover .d-icon,
+.tree-active .d-link,
+.tree-active .d-icon{
+    color: #fff;
+}
+.right{
+    width:100%;
+    height:100%;
+    padding-left: 180px;
+}
+.right-header{
+    width:100%;
+    height:65px;
+    box-shadow: 0 0 8px 0 #ccc;
+}
+.user-info{
+    display: flex;
+    flex-direction: row-reverse;
+    width:100%;
+    height:100%;
+    align-items: center;
+    padding-right: 30px;
+}
+.user-img{
+    order: 1;
+    width: 55px;
+    height: 55px;
+    border-radius: 30px;
+}
+.content{
+    height:100%;
+    padding: 20px 70px 10px 25px;
+}
+.c-header{
+    position: relative;
+    overflow: hidden;
+}
+.select{
+    height: 35px;
+    line-height: 35px;
+    color: #555;
+    font-size: 12px;
+    margin-right: 10px;
+    padding:0 5px ;
+    border-radius: 3px;
+}
+.data{
+    height: 35px;
+    color: #555;
+    border:1px solid rgb(169, 169, 169);
+    padding:0 10px;
+    font-size: 12px;
+    padding-top: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.c-header .search{
+    margin-left: 10px;
+    height:35px;
+    line-height: 35px;
+    padding:0 15px;
+}
+.search-input{
+    width: 400px;
+    height:35px;
+    border: none;
+    border-bottom: 1px solid #1f282c;
+    float: right;
+    padding-right: 20px;
+}
+.search-icon{
+    position: absolute;
+    right:0px;
+    top:8px;
+    cursor: pointer;
+}
+.search-icon:hover{
+    color: #1ab5ff;
+}
+.blue{
+    border-bottom: 1px solid #1ab5ff;
+    color: #1ab5ff;
+}
+.fa.blue{
+    border-bottom: none;
+}
+.data-wrap{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 70%;
+    margin-top: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 80%;
+    float: left;
+    padding-right:5px;
+}
+.add-one-wrap{
+    width:28%;
+    height: 80%;
+    border:1px solid #ddd;
+    margin-top:30px;
+    margin-left: 71%;
+    border-radius: 4px;
+}
+.data-table{
+    border-collapse: collapse;
+    width:100%;
+}
+.data-table tbody{
+    width:100%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 11px;
+    color: #555;
+}
+.data-table tr{
+    width:100%;
+    height: 30px;
+    border-bottom:1px solid #ddd;
+}
+.data-table tr:first-child{
+    height:35px;
+    font-size: 12px;
+}
+.data-table td,
+.data-table th{
+    border:1px solid #ddd;
+    border-top:none;
+    border-bottom: none;
+}
+.data-table td:first-child,
+.data-table th:first-child{
+    border:none;
+}
+.data-table tr:nth-child(even),
+.data-table tr:hover{
+    background: rgba(204, 204, 204, 0.2);
+}
+.data-table tr:first-child:hover{
+    background: none;
+}
+.c-user-img{
+    width:50px;
+}
+.c-user-img img{
+    min-width:25px;
+    height:25px;
+    border-radius: 100%;
+}
+.c-user-name{
+
+}
+.no-handle:after{
+    content: "---";
+}
+.c-member-name{
+    width:150px;
+}
+.c-member-name .show-p{
+    width:146px;
+    padding-left: 4px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+}
+.info-box{
+    position: fixed;
+    padding:5px;
+    max-width:100px;
+    font-size: 10px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.76);
+    border-radius: 4px;
+    line-height: 1.5em;
+    color: #eee;
+    z-index: 10;
+    transition: all 0.06s ease-in-out;
+}
+.func{
+    width:50px;
+}
+
+.func .fa-wrench,
+.func .fa-close{
+    display: inline-block;
+    padding:0 2px;
+    font-size: 14px;
+    color: #555;
+}
+.func .fa-wrench:hover,
+.func .fa-close:hover{
+    color: #000;
+}
+.func .fa-wrench:active,
+.func .fa-close:active{
+    transform: scale(1.2,1.2);
+}
+
+.info-modify{
+    position: fixed;
+    top: 200px;
+    width: 250px;
+    height: 350px;
+    background: red;
+    left:40%;
+    z-index: 101;
+    transition: all 0.5s;
+}
+.shade{
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index: 100;
+    top:0;
+    left:0;
+}
+.faded{
+    opacity: 0;
+    z-index: -101;
+}
+.add-one-wrap{
+    padding: 20px 30px;
+}
+.add-one-title{
+    font-weight: 500;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

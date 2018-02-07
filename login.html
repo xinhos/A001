@@ -25,12 +25,18 @@
                         <p id="warn-message" class="warn-message">登陆密码不正确</p>
                     </div>
                     <div class="input-label">
-                        <span class="fa fa-user-o user-icon"></span>
-                        <input type="text" class="username" id="username">
+                        <span class="fa fa-user-o user-icon" id="user-icon"></span>
+                        <input type="text" class="username" id="username"
+                               onfocus="javascript:$('#user-icon').addClass('back-blue')"
+                               onblur="javascript:$('#user-icon').removeClass('back-blue')"
+                        >
                     </div>
                     <div class="input-label">
-                        <span class="fa fa-lock lock-icon"></span>
-                        <input type="password" class="password" id="passwordTemp">
+                        <span class="fa fa-lock lock-icon" id="lock-icon"></span>
+                        <input type="password" class="password" id="passwordTemp"
+                               onfocus="javascript:$('#lock-icon').addClass('back-blue')"
+                               onblur="javascript:$('#lock-icon').removeClass('back-blue')"
+                        >
                     </div>
                     <button type="button" class="button" onclick="login()">登录</button>
                     <ul class="other-login-ul">
