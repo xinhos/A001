@@ -91,7 +91,26 @@ Messager.ms100097 = "添加分类失败";
 Messager.ms100098 = "删除分类成功";
 Messager.ms100099 = "删除分类失败";
 Messager.ms110091 = "编辑分类失败";
-Messager.ms110092 = "编辑分类失败";
+Messager.ms110092 = "直播类";
+Messager.ms110093 = "录播类";
+Messager.ms110094 = "线下类";
+Messager.ms110095 = "电子类";
+Messager.ms110096 = "教辅类";
+Messager.ms110097 = "已上架";
+Messager.ms110098 = "下架";
+
+// 科目
+Messager.ms200011 = "语文";
+Messager.ms200012 = "数学";
+Messager.ms200013 = "英语";
+Messager.ms200014 = "体育";
+
+//
+Messager.ms200020 = "首页";
+Messager.ms200021 = "中心";
+Messager.ms200022 = "中心轮播";
+Messager.ms200023 = "商城";
+Messager.ms200024 = "商城轮播";
 
 // 定义轮播对象
 function carsourObj(title, imgUrl, prirce) {

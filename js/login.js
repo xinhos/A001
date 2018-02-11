@@ -406,7 +406,7 @@ function regist() {
             method:"post",
             data:{
                 "username":$("#phone-num").html(),
-                "password":$.md5($("#loginPassword").val()),
+                "password":$("#loginPassword").val(), // TODO 服务端注意，服务端收到数据后对密码进行md5加密
                 "memberName":$("#memberName").val(),
                 "role":$("#role").val()
             },

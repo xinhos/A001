@@ -2,9 +2,496 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>云课堂后台-用户管理</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sPublic.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/xinhoCSS.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="laydate/laydate.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/sPublic.js"></script>
 </head>
 <body>
+<div class="wrap">
+    <input type="hidden" id="select-option" value="">
+    <input type="hidden" id="select-time" value="">
+    <input type="hidden" id="search-word" value="">
+    <input type="hidden" id="modify-code" value="">
+    <input type="hidden" id="add-code" value="">
+    <input type="hidden" id="targetPage" value="1">
+    <input type="hidden" id="allPage" value="15">
 
+
+    <!--左边块-->
+    <section class="left">
+        <div class="logo"><a href=""></a></div>
+        <ul class="tree">
+            <li class="directory-li"><a class="d-link" href="sUser.html"><i class="fa fa-user d-icon"></i>用户管理</a></li>
+            <li class="directory-li tree-active"><a class="d-link" href="sGoods.html"><i class="fa fa-barcode d-icon"></i>商品管理</a></li>
+            <li class="directory-li"><a class="d-link" href="sCLass.html"><i class="fa fa-calendar d-icon"></i>分类管理</a></li>
+        </ul>
+    </section>
+    <!--右边块-->
+    <section class="right scroller-default">
+        <header class="right-header">
+            <div class="user-info">
+                <img src="image/temp-teacher-img01.jpg" alt="" class="user-img">
+            </div>
+        </header>
+        <main class="content">
+            <header class="c-header">
+                <select id="select" class="select">
+                    <!-- 这里用jstl吐出来 -->
+                    <option value="ms100055" class="option">全部</option>
+                    <option value="ms100092" class="option">直播类</option>
+                    <option value="ms100093" class="option">录播类</option>
+                    <option value="ms100094" class="option">线下类</option>
+                    <option value="ms100095" class="option">电子类</option>
+                    <option value="ms100096" class="option">教辅类</option>
+                </select>
+                <input type="text" class="data" id="data" placeholder="请选择时间（默认全部）">
+                <script>
+                    laydate.render({
+                        elem:'#data',
+                        type: 'datetime',
+                        range: '~',
+                        format: 'yyyy/M/d'
+                    })
+                </script>
+                <button type="button" id="search" class="search btn-default btn" onclick="selectSearchGoods()">确认</button>
+                <input type="text" class="search-input" id="search-input" placeholder="请输入搜索内容"
+                       onblur="javascript:$('#search-input').removeClass('blue');$('#search-icon').removeClass('blue');"
+                       onfocus="javascript:$('#search-input').addClass('blue');$('#search-icon').addClass('blue');"
+                >
+                <i class="fa fa-search search-icon" id="search-icon" onclick="searchGoods()"></i>
+            </header>
+            <section class="data-wrap ">
+                <div class="table-wrap scroller-default">
+                    <table class="data-table">
+                        <tbody>
+                        <tr>
+                            <th>商品标题</th>
+                            <th>类型</th>
+                            <th>分类名</th>
+                            <th>价格</th>
+                            <th>上架状态</th>
+                            <th>创建时间</th>
+                            <th>已售份数</th>
+                            <th>剩余份数</th>
+                            <th>轮播推荐</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <td class="g-title"><p class="show-p">java架构师之从入门到放弃高级教程java架构师之从入门到放弃高级教程</p><p class="info-box hidden">java架构师之从入门到放弃高级教程java架构师之从入门到放弃高级教程</p></td>
+                            <script>
+                                $(function () {
+                                    $(".g-title").mousemove(function (e) {
+                                        $(this).children(".info-box").removeClass("hidden").css({
+                                            "left":(e.pageX+10)+"px",
+                                            "top":(e.pageY+10)+"px"
+                                        });
+                                    });
+                                    $(".g-title").mouseout(function () {
+                                        $(this).children(".info-box").addClass("hidden");
+                                    })
+                                });
+                            </script>
+                            <td class="g-type">直播类</td>
+                            <td class="g-class">java教程</td>
+                            <td class="g-price">￥<span>666</span></td>
+                            <td class="g-status">已上架</td>
+                            <td class="g-create-time">2017-10-10</td>
+                            <td class="g-saled-num">500</td>
+                            <td class="g-rest-num">500</td>
+                            <td class="g-recommend">首页、中心、中心轮播位</td>
+                            <td class="func">
+                                <i class="fa fa-wrench" onclick="modifyGood(this)"></i>
+                                <i class="fa fa-close" onclick="deleteItGood(this)"></i>
+                                <div class="hidden">
+                                    <input type="hidden" name="good-id" value="">
+                                    <!--如果角色是老师，则将多出的数据写在这里，供js获取-->
+                                    <input type="hidden" name="g-title" value="java架构师之从入门到放弃高级教程">
+                                    <input type="hidden" name="g-type" value="ms110092">
+                                    <input type="hidden" name="g-class" value="java类">
+                                    <input type="hidden" name="g-img-main" value="image/temp-good03.png">
+                                    <input type="hidden" name="g-img-detail" value="image/temp-good02.png">
+                                    <input type="hidden" name="g-price" value="1000">
+                                    <input type="hidden" name="g-status" value="false">
+                                    <input type="hidden" name="g-create-time" value="2017-10-10">
+                                    <input type="hidden" name="g-begin-time" value="每周一下午2点到6点">
+                                    <input type="hidden" name="g-long" value="60min">
+                                    <input type="hidden" name="g-intro" value="这是一个有趣的教程">
+                                    <input type="hidden" name="g-subject" value="ms200012">
+                                    <input type="hidden" name="g-url" value="locolhost">
+                                    <input type="hidden" name="g-saled-num" value="500">
+                                    <input type="hidden" name="g-rest-num" value="-1">
+                                    <input type="hidden" name="g-post-cost" value="0">
+                                    <input type="hidden" name="首页推荐code" value="true">
+                                    <input type="hidden" name="中心推荐code" value="true">
+                                    <input type="hidden" name="中心轮播推荐code" value="true">
+                                    <input type="hidden" name="商城推荐code" value="false">
+                                    <input type="hidden" name="商城轮播推荐code" value="false">
+                                </div>
+                            </td>
+                        </tr>
+                        <!--TODO 如果数据为空，则添加类no-handle -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page-num center-1152 sUser-page">
+                    <ul class="page-ul" id="page-ul">
+                        <li class="page-li" onclick="gotoPage(this)">1</li>
+                        <li class="page-li" onclick="gotoPage(this)">2</li>
+                        <li class="page-li" onclick="gotoPage(this)">3</li>
+                        <li class="page-li" onclick="gotoPage(this)">4</li>
+                        <li class="page-li" onclick="gotoPage(this)">5</li>
+                        <li class="page-li" onclick="gotoPage(this)">6</li>
+                        <li class="page-li" onclick="gotoPage(this)">7</li>
+                        <li class="page-li" onclick="gotoPage(this)">8</li>
+                        <li class="page-li" onclick="gotoPage(this)">9</li>
+                        <li class="page-li hidden" id="page-temp" onclick="gotoPage(this)">*</li>
+                        <li class="page-li page-more">...</li> <!-- 判断，当总页数大于9页时，将尾页和dian显示出来 -->
+                        <li class="page-li" onclick="gotoPage(this)">20</li>
+                        <li class="page-li-search"><input type="number" id="page-goto"><button class="btn-default page-button" onclick="gotoButton(this)">跳转</button></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="add-one-wrap good-add-wrap" id="add-one-wrap">
+                <h3 class="add-one-title">添加商品</h3>
+                <div class="ipt-wrap">
+                    <span>图片</span>
+                    <input type="file" id="add-g-img-main" style="width: 150px;">
+                </div>
+                <div class="ipt-wrap" id="quo-wrap">
+                    <span class="exp-span">标题</span>
+                    <textarea class="scroller-default good-textarea" style="height: 40px" id="quo-add"></textarea>
+                </div>
+
+                <div class="ipt-wrap-wrap">
+                    <div class="ipt-wrap">
+                        <span>类型</span>
+                        <select id="add-g-type" onchange="changeType(this)">
+                            <option value="" class="option">未选择</option>
+                            <option value="ms100092" class="option">直播类</option>
+                            <option value="ms100093" class="option">录播类</option>
+                            <option value="ms100094" class="option">线下类</option>
+                            <option value="ms100095" class="option">电子类</option>
+                            <option value="ms100096" class="option">教辅类</option>
+                        </select>
+                    </div>
+
+                    <div class="ipt-wrap">
+                        <span>分类</span>
+                        <select id="add-g-class">
+                            <option value="ms100091" class="option">直播类</option>
+                            <option value="ms100092" class="option">录播类</option>
+                            <option value="ms100092" class="option">线下类</option>
+                            <option value="ms100092" class="option">电子类</option>
+                            <option value="ms100092" class="option">教辅类</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ipt-wrap-wrap">
+                    <div class="ipt-wrap">
+                        <span>价格</span>
+                        <input type="text" id="add-g-price" style="width: 50px;" value="">
+                    </div>
+                    <div class="ipt-wrap">
+                        <span style="display: inline-block;padding-right: 5px">状态</span>
+                        <select style="font-size: 10px;height: 20px;border-color: #ccc;color: #555;margin-left: -4px;padding-left: 0;">
+                            <option value="ms110097">已上架</option>
+                            <option value="ms110098">已下架</option>
+                        </select>
+                    </div>
+                </div>
+                <!--不同类型不同显示-->
+                <script>
+                    function changeType(e) {
+                        var code = $(e).val();
+                        $("#el-01").addClass('hidden');
+                        $("#el-02").addClass('hidden');
+                        $("#video-add").addClass('hidden');
+                        $("#item").addClass('hidden');
+                        $("#g-subject-add").addClass('hidden');
+                        $("#label-list").addClass('hidden');
+                        $("#begin-time").addClass('hidden');
+
+                        // 清空数据
+                        $("#add-g-img-main").val();
+                        $("#quo-add").val();
+                        $("#add-g-type").val(); // 保留大类选择
+                        $("#add-g-class").val(); // 保留小类选择
+                        $("#add-g-price").val("");
+                        $("#add-g-begin-time").val("");
+                        $("#add-g-intro").val("");
+                        $("#add-g-url").val("");
+                        $("#add-g-rest-num").val("");
+                        $("#add-g-post-cost").val("");
+                        $("#label-c01 input").removeAttr('checked');
+                        $("#label-c02 input").removeAttr('checked');
+                        $("#label-m01 input").removeAttr('checked');
+                        $("#label-m02 input").removeAttr('checked');
+                        $("#ms200020-add").removeAttr('checked');
+                        $("#g-subject-value").val(); // 保留学科选择
+                        switch (code){
+                            case "":
+                                $("#el-01").removeClass('hidden');
+                                $("#el-02").removeClass('hidden');
+                                $("#video-add").removeClass('hidden');
+                                $("#item").removeClass('hidden');
+                                $("#g-subject-add").removeClass('hidden');
+                                $("#begin-time").removeClass('hidden');
+                                $("#label-list").removeClass('hidden');
+                                break;
+                            case "ms100092":
+                                $("#video-add").removeClass('hidden');
+                                $("#label-list").removeClass('hidden');
+                                $("#begin-time").removeClass('hidden');
+                                $("#label-m01 input").attr('disabled','disabled');
+                                $("#label-m02 input").attr('disabled','disabled');
+                                break;
+                            case "ms100093":
+                                $("#video-add").removeClass('hidden');
+                                $("#label-list").removeClass('hidden');
+                                $("#label-m01 input").attr('disabled','disabled');
+                                $("#label-m02 input").attr('disabled','disabled');
+                                break;
+                            case "ms100094":$("#g-subject-add").removeClass('hidden');break;
+                            case "ms100095":
+                                $("#el-01").removeClass('hidden');
+                                $("#el-02").removeClass('hidden');break;
+                            case "ms100096":
+                                $("#item").removeClass('hidden');
+                                $("#label-list").removeClass('hidden');
+                                $("#label-c01 input").attr('disabled','disabled');
+                                $("#label-c02 input").attr('disabled','disabled');
+                                break;
+                        }
+                    }
+                </script>
+                <div id="video-add" class=" ipt-wrap-wrap">
+                    <div class="ipt-wrap" id="begin-time">
+                        <span>开课时间</span>
+                        <input type="text" style="width: 50px;" id="add-g-begin-time" value="">
+                    </div>
+                    <div class="ipt-wrap">
+                        <span>课程时长</span>
+                        <input type="text" style="width: 50px;" id="add-g-long" value="">
+                    </div>
+                </div>
+                <div class="ipt-wrap" id="el-01">
+                    <span class="exp-span">课程介绍</span>
+                    <textarea  id="add-g-intro" value=""></textarea>
+                </div>
+                <div class="ipt-wrap" id="el-02">
+                    <span>资料链接</span>
+                    <input type="text" id="add-g-url" value="">
+                </div>
+                <div class="ipt-wrap-wrap" id="item">
+                    <div class="ipt-wrap">
+                        <span>库存</span>
+                        <input type="text" style="width: 50px;" id="add-g-rest-num" value="">
+                    </div>
+                    <div class="ipt-wrap">
+                        <span>邮费</span>
+                        <input style="width: 50px;" type="text" id="add-g-post-cost" value="">
+                    </div>
+                </div>
+                <div class="ipt-wrap" style="padding-left: 40px" id="label-list">
+                    <label class="ipt-wrap cu-wrap" >
+                        <input type="checkbox" id="ms200020-add" value="true">
+                        <span>首页</span>
+                    </label>
+                    <label class="ipt-wrap cu-wrap" id="label-c01">
+                        <input type="checkbox" value="true">
+                        <span>中心</span>
+                    </label>
+                    <label class="ipt-wrap cu-wrap" id="label-c02">
+                        <input type="checkbox" value="true">
+                        <span>中心轮播</span>
+                    </label>
+                    <label class="ipt-wrap cu-wrap" id="label-m01">
+                        <input type="checkbox" id="add-商城推荐code" value="true">
+                        <span>商城</span>
+                    </label>
+                    <label class="ipt-wrap cu-wrap" id="label-m02">
+                        <input type="checkbox" id="add-商城轮播推荐code" value="true">
+                        <span>商城轮播</span>
+                    </label>
+                </div>
+                <div class="ipt-wrap" id="g-subject-add">
+                    <span>学科</span>
+                    <select style="font-size: 10px;height: 20px;border-color: #ccc;color: #555;" id="g-subject-value">
+                        <option value="ms100051">英语</option>
+                        <option value="ms100052">数学</option>
+                    </select>
+                </div>
+                <button class="btn-default class-11 btn" onclick="addGood()">确定添加</button>
+            </section>
+        </main>
+    </section>
+</div>
+<div class="shade hidden" id="shadow" onclick="javascript:$('#shadow').addClass('hidden');$('#info-modify').addClass('faded')">
+    <!--用户编辑框-->
+    <div class="info-modify faded" onclick="javascript:event.stopPropagation()" id="info-modify">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="modify-wrap">
+                <ul class="info-left g-info-left">
+                    <li class="g-img-li" id="g-img-li">
+                        <span class="text" id="img-bro">图片</span>
+                        <span style="position:relative;margin-right: 4px" class="img-flag hidden" id="main-img">
+                            <img src="image/temp-teacher-img03.jpg" alt="" class="img-active" onclick="
+                                javascript:$('#g-img-li .img-active').removeClass('img-active');
+                                $(this).addClass('img-active');
+                            ">
+                            <span class="img-delete fa" onclick="javascript:
+                                if ($(this).prev().hasClass('img-active'))
+                                    return;
+
+                                $(this).parent().remove()"
+                            ><span>×</span></span>
+                        </span>
+                        <span style="position:relative;margin-right: 4px" class="hidden" id="detail-img">
+                            <img src="image/temp-teacher-img03.jpg" alt="" class="img-active" onclick="javascript:
+                                $('#g-img-li .img-active').removeClass('img-active');
+                                $(this).addClass('img-active');
+                            ">
+                            <span class="img-delete fa" onclick="javascript:
+                                if ($(this).prev().hasClass('img-active'))
+                                    return;
+                                $('#g-img-li').append('<input type=\'hidden\' name=\'deleteImg\' value=\''+$(this).prev().attr('src')+'\'>'); <!-- TODO 后台注意，要先判断是否有新文件上传，在删除 -->
+                                $(this).parent().remove()"
+                            ><span>×</span></span>
+                        </span>
+                        <label id="label-img" for="load-img" class="fa fa-plus add-img" onclick="
+                        javascript:if($(this).siblings('.img-flag').length==2)event.preventDefault()"></label>
+                    </li>
+                    <li><span class="text">分类</span>
+                        <input style="width: 50px;"  class="info-input no-data" id="g-type" disabled="disabled">
+                    </li>
+                    <li>
+                        <span class="text">类别</span><input style="width: 50px;" id="g-class" type="text" class="info-input no-data"></span>
+                    </li>
+                    <li>
+                        <span class="text">状态</span>
+                        <select style="font-size: 10px;height: 20px;border-color: #ccc;color: #555;margin-left: -4px;padding-left: 0">
+                            <option value="ms110097" id="ms110097">已上架</option>
+                            <option value="ms110098" id="ms110098">已下架</option>
+                        </select>
+                    </li>
+                    <input type="file" id="load-img" class="hidden" onchange="changeimgGood(event)">
+                    <li><span class="text">价格</span><input style="width: 50px;" id="g-price" type="text" class="info-input"><span style="font-size: 10px">元</span></li>
+                    <li><span class="text">创建时间</span><input id="createTime" style="width: 60px;" type="text" class="info-input" value="2017-10-10"></li>
+                    <li><span class="text">邮费</span><input style="width: 50px;" id="g-post-cost" type="text" class="info-input"><span style="font-size: 10px">元</span></li>
+                    <li><span class="text">学科</span>
+                        <select style="font-size: 10px;height: 20px;border-color: #ccc;color: #555;" id="g-subject">
+                            <option value="ms100051">英语</option>
+                            <option value="ms100052">数学</option>
+                        </select>
+                    </li>
+                    <li><span class="text">上课时间</span><input id="beginTime" type="text" class="info-input"></li>
+                    <script>
+                        laydate.render({
+                            elem: '#createTime'
+                        });
+                    </script>
+                    <li><span class="text">已售数量</span><input id="saledNum" type="text" class="info-input"></li>
+                    <li><span class="text">库存数量</span><input id="restNum" type="text" class="info-input"></li>
+                    <li><span class="text">课程时长</span><input id="long" type="text" class="info-input"></li>
+                    <li><span class="text">资料链接</span><input id="url" type="text" class="info-input"></li>
+                    <li>
+                        <span class="text">轮播推荐</span>
+                        <span id="recommend">
+                            <label><input type="checkbox" id="r-main">首页</label>
+                            <label id="ms200021" class="hidden"><input type="checkbox">中心</label>
+                            <label id="ms200022" class="hidden"><input type="checkbox">中心轮播</label>
+                            <label id="ms200023" class="hidden"><input type="checkbox">商城</label>
+                            <label id="ms200024" class="hidden"><input type="checkbox">商城轮播</label>
+                        </span>
+                    </li>
+                </ul>
+                <div class="info-right">
+                    <div class="intro">
+                        <h5>商品标题</h5>
+                        <textarea placeholder="请控制在50字以内" class="textarea" id="title"></textarea>
+                    </div>
+                    <div class="quo">
+                        <h5>商品简介</h5>
+                        <textarea class="textarea" id="intro"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="confire-button" id="confire-button">保存</button>
+            <div class="hidden" id="page-word-wrap">
+                <input type="hidden" name="selectOption" value="">
+                <input type="hidden" name="selectTime" value="">
+                <input type="hidden" name="searchWord" value="">
+                <input type="hidden" name="allPage" value="">
+                <input type="hidden" name="targetPage" value="">
+            </div>
+        </form>
+    </div>
+</div>
+<!--当分页、搜索时候，转发回原页面时数据回显-->
+<script>
+    var optionCode = $("#select-option").val();
+    var optionStr = "#select option[value='"+optionCode+"']";
+    $(optionStr).attr("selected","selected");
+    $("#search-input").val($("#search-word").val());
+    var pageNum = parseInt($("#targetPage").val());
+    var temp = pageNum;
+    var pageUl = $("#page-ul");
+    if (pageNum == parseInt($("#allPage").val())){
+        pageNum = 12;
+    } else if( pageNum>9){
+        $("#page-temp").removeClass("hidden").html(temp);
+        pageNum = 10;
+    }
+    pageUl.children("li:nth-child("+pageNum+")").addClass("page-active");
+    $("#data").val($("#select-time").val())
+</script>
+<!--修改用户信息结果状态代码-->
+<script>
+    var code = $("#modify-code").val();
+    if (code == "ms100060"){
+        layer.alert("商品信息修改成功",{
+            icon:1
+        });
+    }  else if(code != ""){
+        layer.alert(Messager[code],{
+            icon:2
+        });
+    }
+</script>
+<!--编辑头像-->
+<script>
+    function changeimgGood(e) {
+        for (var i = 0; i < e.target.files.length; i++) {
+            var file = e.target.files.item(i);
+            if (!(/^image\/.*$/i.test(file.type))) {
+                continue; //不是图片 就跳出这一次循环
+                alert("请选择图片");
+            }
+            //实例化FileReader API
+            var freader = new FileReader();
+            freader.readAsDataURL(file);
+            freader.onload = function(e) {
+                console.log("图片已经选中");
+                $("#label-img").before("" +
+                    " <span style='position:relative;margin-right: 4px' class='img-flag'>\n" +
+                    "      <img src='"+e.target.result+"' alt='' class='' onclick=\'javascript:\n" +
+                    "      $(\'#g-img-li .img-active\').removeClass(\'img-active\');\n" +
+                    "      $(this).addClass(\'img-active\')\n" +
+                    "      \'>\n" +
+                    "      <span class='img-delete fa' onclick='javascript:if ($(this).prev().hasClass(\'img-active\'))return;$(this).parent().remove()'><span>×</span></span>\n" +
+                    "</span>");
+            }
+        }
+    }
+</script>
 </body>
 </html>

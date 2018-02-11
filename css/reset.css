@@ -1,5 +1,5 @@
 /*///////////去除边距////////////////*/
-html,body,div,main,article,p,ul,ol,li,header,main,section,footer,span,
+html,body,div,main,article,p,ul,ol,li,header,main,section,footer,span,textarea
 h1,h2,h3,h4,h5,h6{
     padding: 0;
     margin: 0;

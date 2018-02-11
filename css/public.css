@@ -329,17 +329,23 @@ main{
 
 .types{
     display: flex;
-    margin-bottom: 20px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.33);
     height: 50px;
     overflow: hidden;
 }
+.son-type{
+    border-radius: 0px !important;
+    margin-bottom: 20px;
+    background: none;
+    display: flex;
+    flex-wrap: wrap;
+}
 .types li{
     display: inline-block;
 }
 .types li:hover,
-li.types-active{
+.types li.types-active{
     background: rgba(0, 0, 0, 0.5);
 }
 .types li a{
@@ -349,11 +355,30 @@ li.types-active{
     padding:0 20px;
     color: #ddd;
 }
+
 .types li:hover a,
-li.types-active a{
+.types li.types-active a{
     color: #fff;
 }
-
+.son-type li a{
+    color: #555;
+    font-size: 11px;
+    transition: all 1.5s;
+}
+.son-type li a:hover{
+    color: #000;
+    display: inline-block;
+    transform: scale(1.5,1.5);
+    transition: all 0.4s;
+}
+.son-type li:hover,
+.son-type li.types-active{
+    background: none;
+    border-bottom: 2px solid #30aaff;
+}
+.son-type li{
+    transition:border 0.1s ;
+}
 
 
 
