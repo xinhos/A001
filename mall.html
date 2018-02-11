@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="css/xinhoCSS.css">
     <link rel="stylesheet" href="css/mall.css">
     <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/layui.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <script src="js/public.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/layui.js"></script>
+    <script src="js/lay/modules/carousel.js"></script>
     <script src="js/mall.js"></script>
 </head>
 <body>
@@ -50,13 +53,28 @@
             <li><a href="">教辅类</a></li>
             <li><a href="">线下类</a></li>
         </ul>
-        <div class="banner center-1152 class-02">
-            <div class="banner-stage">
+
+        <div class="banner center-1152 class-02 layui-carousel" id="carousel-mall">
+            <div class="banner-stage" carousel-item>
                 <a href=""><img src="image/banner01.jpg" alt=""></a>
                 <a href=""><img src="image/banner02.jpg" alt=""></a>
                 <a href=""><img src="image/banner03.jpg" alt=""></a>
             </div>
         </div>
+        <!--引入 layui 轮播组件-->
+        <script>
+            layui.use('carousel', function(){
+                var carousel = layui.carousel;
+                carousel.render({
+                    elem: '#carousel-mall',
+                    width: '1152px',
+                    height: '400px',
+                    arrow: 'none',
+                    anim: 'default'
+                });
+            });
+        </script>
+
         <div class="section-wrap wrap-01">
             <div class="hot-intro-wrap center-1152">
                 <h2 class="hot-intro">热门推荐</h2>
