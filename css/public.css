@@ -171,12 +171,17 @@ main{
 }
 .banner{
     height: 400px;
-    /*position: relative;*/
+    position: relative;
     box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
     border-radius: 10px;
     overflow: hidden;
 }
 .banner-stage{
+    height: 100%;
+    position: relative;
+    width:3456px;
+    font-size: 0px;
+    animation: anima-01 7.4s linear 0s infinite alternate;
 }
 /* TODO 目前是固定3个轮播，如果轮播数目要变，可以用js控制。两种方案，一：用定时器，二：计算新的动画样式并写入 */
 @keyframes anima-01 {

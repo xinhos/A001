@@ -81,6 +81,7 @@ Messager.ms100085 = "商品删除失败-id不存在";
 Messager.ms100086 = "商品删除失败-不允许删除";
 
 // 分类信息
+Messager.ms100090 = "全部";
 Messager.ms100091 = "商城大类";
 Messager.ms100092 = "学习中心大类";
 Messager.ms100093 = "一级分类";
@@ -112,11 +113,14 @@ Messager.ms200022 = "中心轮播";
 Messager.ms200023 = "商城";
 Messager.ms200024 = "商城轮播";
 
+
+
 // 定义轮播对象
-function carsourObj(title, imgUrl, prirce) {
+function carsourObj(title, imgUrl, prirce, url) {
     this.title = title;
     this.imgUrl = imgUrl;
     this.price = prirce;
+    this.url = url;
 }
 
 
